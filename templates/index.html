@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Weather Forecast</h1>
+    <h2>Enter a Location in the United States</h2>
+    <form action="/" method="post">
+        <input type="text" name="city" placeholder="City (ex: New York)">
+        <input type="text" name="state" placeholder="State (ex: NY)">
+        <button type="submit">Get Weather</button>
+    </form>
+    <button onclick="window.location.href='/reset'">Clear</button>
+</body>
+</html>

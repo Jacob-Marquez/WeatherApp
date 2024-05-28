@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Forecast for {{ city }}, {{state}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Weather Forecast for {{ city }}, {{state}}</h1>
+    <ul>
+        {% for day in forecast %}
+            <li>
+                
+                {{ day.date }}
+                <img src="{{ day.icon }}" alt="Weather icon" width="25" height="25">
+                {{ day.temp }}°F {{ day.description }}
+            </li>
+        {% endfor %}
+    </ul>
+    <button onclick="window.location.href='/'">New Location</button>
+</body>
+</html>
