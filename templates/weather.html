@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Weather Forecast for {{ city }}, {{state}}</title>
+    <title>Weather Forecast for {{ city }}, {{ state }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Weather Forecast for {{ city }}, {{state}}</h1>
+    <h1>Weather Forecast for {{ city }}, {{ state }}</h1>
     <ul>
-        {% for day in forecast %}
+        {% for day in prediction %}
             <li>
+                <strong>{{ day.date }}</strong>
+                <img src="{{ day.icon }}" alt="Weather icon" width="25" height="25"> <br>
+                Temperature: {{ day.temp }}°F<br>
+                Weather: {{ day.description }}<br>
                 
-                {{ day.date }}
-                <img src="{{ day.icon }}" alt="Weather icon" width="25" height="25">
-                {{ day.temp }}°F {{ day.description }}
             </li>
         {% endfor %}
     </ul>
